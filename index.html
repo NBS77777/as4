@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a train ticket</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ticket-card">
+    <div class="ticket-header">
+      Book a train ticket
+    </div>
+    
+    <div class="ticket-body">
+      <form id="ticketForm">
+        
+        <div class="trip-type-toggle mb-4">
+            <input type="radio" class="btn-check" name="tripType" id="oneWay" value="oneWay" checked>
+            <label class="btn trip-btn" for="oneWay">One way</label>
+
+            <input class="btn-check" type="radio" name="tripType" id="roundTrip" value="roundTrip">
+            <label class="btn trip-btn" for="roundTrip">Round trip</label>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="from" placeholder=" " value="Astana" required>
+              <label for="from">From</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="to" placeholder=" " value="Almaty" required>
+              <label for="to">To</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label for="departure" class="form-label">Departure</label>
+            <input type="date" class="form-control" id="departure" required>
+          </div>
+          <div class="col-md-4">
+            <label for="return" class="form-label">Return</label>
+            <input type="date" class="form-control" id="return">
+          </div>
+          <div class="col-md-4">
+            <label for="passengers" class="form-label">Passengers</label>
+            <select class="form-select" id="passengers" required>
+              <option value="1" selected>1 adult</option>
+              <option value="2">2 adults</option>
+              <option value="3">3 adults</option>
+              <option value="4">4 adults</option>
+              <option value="5">5 adults</option>
+              <option value="6">6 adults</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label d-block">Carriage class</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="carriageClass" id="seat" value="seat" required checked>
+            <label class="form-check-label" for="seat">Seat</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="carriageClass" id="coupe" value="coupe">
+            <label class="form-check-label" for="coupe">Coupé</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="carriageClass" id="sleeper" value="sleeper">
+            <label class="form-check-label" for="sleeper">Sleeper</label>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <div class="input-group">
+              <span class="input-group-text phone-prefix">+7</span>
+              <input type="tel" class="form-control" id="phone" placeholder="701 234 56 78" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-check form-switch mb-2">
+            <input class="form-check-input" type="checkbox" id="smsNotify">
+            <label class="form-check-label" for="smsNotify">
+              Also send the ticket by SMS
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="agreeRules" required>
+            <label class="form-check-label" for="agreeRules">
+              I agree with the carriage rules
+            </label>
+          </div>
+        </div>
+
+        <div class="button-group d-flex justify-content-end gap-3">
+          <button type="reset" class="btn btn-clear">Clear</button>
+          <button type="submit" class="btn btn-find">Find trains</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
