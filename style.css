@@ -63,18 +63,6 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.15);
 }
 
-.form-floating > .form-control {
-  height: 58px;
-  min-height: 58px;
-  padding-top: 1.5rem;
-  padding-bottom: 0.4rem;
-}
-
-.form-floating > label {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
 .form-label {
   display: block;
   margin-bottom: 0.35rem;
@@ -108,23 +96,6 @@ body {
   color: #fff;
 }
 
-.btn-check:focus-visible + .trip-btn {
-  outline: 2px solid var(--train-orange);
-  outline-offset: 2px;
-}
-
-.carriage-fieldset {
-  min-width: 0;
-  padding: 0;
-  border: 0;
-}
-
-.carriage-fieldset legend {
-  float: none;
-  width: auto;
-  margin-bottom: 0.35rem;
-}
-
 .class-options {
   display: flex;
   flex-wrap: wrap;
@@ -136,9 +107,7 @@ body {
   margin-right: 0;
 }
 
-.form-check-input {
-  border-color: #aebdb8;
-}
+
 
 .form-check-input:checked {
   background-color: var(--train-green);
@@ -148,11 +117,6 @@ body {
 .form-check-input:focus {
   border-color: var(--train-green);
   box-shadow: 0 0 0 0.2rem rgba(15, 107, 95, 0.15);
-}
-
-.form-check-label {
-  color: var(--train-dark);
-  font-size: 0.85rem;
 }
 
 .phone-prefix {
@@ -167,26 +131,11 @@ body {
   font-size: 0.9rem;
 }
 
-.input-group .form-control {
-  border-radius: 0 0.5rem 0.5rem 0;
-}
 
-.form-options {
-  margin-bottom: 1.25rem !important;
-}
 
-.form-switch .form-check-input {
-  cursor: pointer;
-}
 
-.form-check-input,
-.form-check-label {
-  cursor: pointer;
-}
 
-.button-group {
-  align-items: center;
-}
+
 
 .button-group .btn {
   min-height: 42px;
@@ -231,10 +180,6 @@ body {
 @media (min-width: 768px) {
   body {
     padding: 2rem;
-  }
-
-  .ticket-card {
-    max-width: 1000px;
   }
 
   .ticket-body {
