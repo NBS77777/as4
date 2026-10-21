@@ -15,24 +15,31 @@
     <div class="ticket-body">
       <form id="ticketForm">
         <fieldset class="trip-type-toggle mb-4">
-          <legend class="visually-hidden">Trip type</legend>
           <input type="radio" class="btn-check" name="tripType" id="oneWay" value="oneWay" checked>
           <label class="btn trip-btn" for="oneWay">One way</label>
+          
           <input type="radio" class="btn-check" name="tripType" id="roundTrip" value="roundTrip">
           <label class="btn trip-btn" for="roundTrip">Round trip</label>
         </fieldset>
 
-        <div class="row g-3 mb-3">
+        <div class="row">
           <div class="col-md-6">
-            <label for="from" class="form-label">From</label>
-            <input type="text" class="form-control" id="from" name="from" placeholder="From" required>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="Astana">
+              <label for="floatingInput">FROM</label>
+            </div>
           </div>
+          
           <div class="col-md-6">
-            <label for="to" class="form-label">To</label>
-            <input type="text" class="form-control" id="to" name="to" placeholder="To" required>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Almaty">
+              <label for="floatingPassword">TO</label>
+            </div>
           </div>
         </div>
 
+        <br>
+        
         <div class="row g-3 mb-3">
           <div class="col-md-4">
             <label for="departure" class="form-label">Departure</label>
@@ -78,7 +85,7 @@
             <label for="phone" class="form-label">Phone</label>
             <div class="input-group">
               <span class="input-group-text phone-prefix">+7</span>
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="701 234 56 78" inputmode="numeric" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" title="Enter 10 digits in the format 701 234 56 78" required>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
             </div>
           </div>
           <div class="col-md-6">
