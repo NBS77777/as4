@@ -2,108 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Reserve a Table</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator</title>
+    <link rel="stylesheet" href="style3.css">
+    <script src="task3.js" defer></script>
 </head>
 <body>
+    <main class="container">
+        <h1>Character Creator</h1>
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
+        <form id="characterForm">
+            <label for="characterName">Character name</label>
+            <input type="text" id="characterName" required minlength="3" maxlength="15">
+            <small id="characterNameError" class="error"></small>
 
-            <h2>Reserve a Table</h2>
+            <label for="characterClass">Character class</label>
+            <select id="characterClass" required>
+                <option value="">Choose a class</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Mage">Mage</option>
+                <option value="Archer">Archer</option>
+            </select>
+            <small id="characterClassError" class="error"></small>
 
-            <form>
+            <label for="characterColor">Character color</label>
+            <input type="color" id="characterColor" value="#7c3aed">
 
-                <div class="mb-3">
-                    <label for="customerName" class="form-label">Your name</label>
-                    <input type="text" class="form-control"
-                           id="customerName" name="customerName" required>
-                </div>
+            <h2>Skills</h2>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control"
-                           id="email" name="email" required>
-                </div>
+            <label for="strength">Strength</label>
+            <input type="number" id="strength" min="1" max="10" value="5" required>
+            <small id="strengthError" class="error"></small>
 
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="tel" class="form-control"
-                           id="phone" name="phone" required>
-                </div>
+            <label for="magic">Magic</label>
+            <input type="number" id="magic" min="1" max="10" value="5" required>
+            <small id="magicError" class="error"></small>
 
-                <div class="mb-3">
-                    <label for="guests" class="form-label">Guests</label>
-                    <input type="number" class="form-control"
-                           id="guests" name="guests"
-                           min="1" max="20" step="1" required>
-                </div>
+            <label for="agility">Agility</label>
+            <input type="number" id="agility" min="1" max="10" value="5" required>
+            <small id="agilityError" class="error"></small>
 
-                <div class="mb-3">
-                    <label for="date" class="form-label">Date</label>
-                    <input type="date" class="form-control"
-                           id="date" name="date" required>
-                </div>
+            <label for="defense">Defense</label>
+            <input type="number" id="defense" min="1" max="10" value="5" required>
+            <small id="defenseError" class="error"></small>
 
-                <fieldset class="mb-3">
-                    <legend class="form-label">Seating</legend>
+            <p>Skill points left: <strong id="pointsLeft">0</strong></p>
 
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input"
-                               name="seating" id="inside"
-                               value="Inside" required>
-                        <label for="inside" class="form-check-label">
-                            Inside
-                        </label>
-                    </div>
+            <div id="formErrors" aria-live="polite"></div>
 
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input"
-                               name="seating" id="terrace"
-                               value="Terrace" required>
-                        <label for="terrace" class="form-check-label">
-                            Terrace
-                        </label>
-                    </div>
-                </fieldset>
+            <button type="submit">Create Character</button>
+        </form>
 
-                <div class="mb-3">
-                    <label for="meal" class="form-label">Meal</label>
-                    <select class="form-select" id="meal" name="meal" required>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
-                    </select>
-                </div>
+        <section class="preview">
+            <h2>Character Preview</h2>
+            <div id="previewCard">
+                <h3 id="previewName">Unnamed Character</h3>
+                <p>Class: <span id="previewClass">Not selected</span></p>
+                <p>Strength: <span id="previewStrength">5</span></p>
+                <p>Magic: <span id="previewMagic">5</span></p>
+                <p>Agility: <span id="previewAgility">5</span></p>
+                <p>Defense: <span id="previewDefense">5</span></p>
+            </div>
+        </section>
 
-                <div class="mb-3">
-                    <label for="comments" class="form-label">Comments</label>
-                    <textarea class="form-control"
-                              id="comments" name="comments" rows="3"></textarea>
-                </div>
-
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input"
-                           id="agreement" name="agreement"
-                           value="accepted" required>
-                    <label for="agreement" class="form-check-label">
-                        I agree to the terms
-                    </label>
-                </div>
-
-                <button type="submit" class="btn btn-primary">
-                    Reserve
-                </button>
-
-            </form>
-
-        </div>
-    </div>
-</div>
-
+        <section id="result" aria-live="polite"></section>
+    </main>
 </body>
 </html>

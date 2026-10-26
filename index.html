@@ -1,116 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Train Ticket</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="task1.js" defer></script>
 </head>
 <body>
-  <main class="ticket-card">
-    <header class="ticket-header">Book a train ticket</header>
+    <main class="game">
+        <h1>Higher or Lower</h1>
+        <p>Will the next number be higher or lower?</p>
 
-    <div class="ticket-body">
-      <form id="ticketForm">
-        <fieldset class="trip-type-toggle mb-4">
-          <input type="radio" class="btn-check" name="tripType" id="oneWay" value="oneWay" checked>
-          <label class="btn trip-btn" for="oneWay">One way</label>
-          
-          <input type="radio" class="btn-check" name="tripType" id="roundTrip" value="roundTrip">
-          <label class="btn trip-btn" for="roundTrip">Round trip</label>
-        </fieldset>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="Astana">
-              <label for="floatingInput">FROM</label>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingPassword" placeholder="Almaty">
-              <label for="floatingPassword">TO</label>
-            </div>
-          </div>
+        <div class="number-box">
+            <span>Current number</span>
+            <strong id="currentNumber">--</strong>
         </div>
 
-        <br>
-        
-        <div class="row g-3 mb-3">
-          <div class="col-md-4">
-            <label for="departure" class="form-label">Departure</label>
-            <input type="date" class="form-control" id="departure" name="departure" required>
-          </div>
-          <div class="col-md-4">
-            <label for="return" class="form-label">Return</label>
-            <input type="date" class="form-control" id="return" name="return">
-          </div>
-          <div class="col-md-4">
-            <label for="passengers" class="form-label">Passengers</label>
-            <select class="form-select" id="passengers" name="passengers" required>
-              <option value="1" selected>1 adult</option>
-              <option value="2">2 adults</option>
-              <option value="3">3 adults</option>
-              <option value="4">4 adults</option>
-              <option value="5">5 adults</option>
-              <option value="6">6 adults</option>
-            </select>
-          </div>
+        <div class="stats">
+            <p>Lives: <span id="lives">3</span></p>
+            <p>Current streak: <span id="streak">0</span></p>
+            <p>Best streak: <span id="bestStreak">0</span></p>
         </div>
 
-        <fieldset class="mb-3 carriage-fieldset">
-          <legend class="form-label">Carriage class</legend>
-          <div class="class-options">
-            <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="carriageClass" value="seat" required checked>
-              Seat
-            </label>
-            <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="carriageClass" value="coupe">
-              Coupé
-            </label>
-            <label class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="carriageClass" value="sleeper">
-              Sleeper
-            </label>
-          </div>
-        </fieldset>
-
-        <div class="row g-3 mb-3">
-          <div class="col-md-6">
-            <label for="phone" class="form-label">Phone</label>
-            <div class="input-group">
-              <span class="input-group-text phone-prefix">+7</span>
-              <input type="tel" class="form-control" id="phone" name="phone" required>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-          </div>
+        <div class="buttons">
+            <button id="higherButton">Higher</button>
+            <button id="lowerButton">Lower</button>
         </div>
 
-        <div class="form-options mb-4">
-          <label class="form-check form-switch mb-2">
-            <input class="form-check-input" type="checkbox" id="smsNotify" name="smsNotify">
-            Also send the ticket by SMS
-          </label>
-          <label class="form-check">
-            <input class="form-check-input" type="checkbox" id="agreeRules" name="agreeRules" required>
-            I agree with the carriage rules
-          </label>
-        </div>
+        <p id="message" aria-live="polite">Press Start Game to play.</p>
 
-        <div class="button-group d-flex justify-content-end gap-3">
-          <button type="reset" class="btn btn-clear">Clear</button>
-          <button type="submit" class="btn btn-find">Find trains</button>
-        </div>
-      </form>
-    </div>
-  </main>
+        <button id="startButton">Start Game</button>
+    </main>
 </body>
 </html>
