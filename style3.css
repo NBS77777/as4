@@ -53,10 +53,6 @@ select {
     color: #ffffff;
 }
 
-input[type="color"] {
-    padding: 4px;
-}
-
 input:focus-visible,
 select:focus-visible,
 button:focus-visible {
@@ -71,10 +67,12 @@ select[aria-invalid="true"] {
 
 .error {
     color: #f87171;
+    overflow-wrap: anywhere;
 }
 
 #formErrors {
     color: #f87171;
+    font-weight: bold;
 }
 
 button {
@@ -92,17 +90,15 @@ button:hover {
     background: #6d28d9;
 }
 
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
 #previewCard {
     padding: 20px;
     border: 2px solid #7c3aed;
     border-radius: 10px;
     overflow-wrap: anywhere;
+    border-color: var(--character-color, #a78bfa);
 }
+
+
 
 #result {
     grid-column: 1 / -1;
@@ -110,9 +106,11 @@ button:disabled {
 
 .success {
     padding: 20px;
-    border: 1px solid #34d399;
+    border: 2px solid #34d399;
     border-radius: 10px;
-    background: #064e3b;
+    background: #171f35;
+    overflow-wrap: anywhere;
+    border-color: var(--character-color, #a78bfa);
 }
 
 @media (max-width: 600px) {

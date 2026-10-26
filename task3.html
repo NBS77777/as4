@@ -12,12 +12,14 @@
         <h1>Character Creator</h1>
 
         <form id="characterForm">
+            <div id="formErrors" aria-live="polite"></div>
+
             <label for="characterName">Character name</label>
-            <input type="text" id="characterName" required minlength="3" maxlength="15">
+            <input type="text" id="characterName" required minlength="3" maxlength="15" aria-describedby="characterNameError">
             <small id="characterNameError" class="error"></small>
 
             <label for="characterClass">Character class</label>
-            <select id="characterClass" required>
+            <select id="characterClass" required aria-describedby="characterClassError">
                 <option value="">Choose a class</option>
                 <option value="Warrior">Warrior</option>
                 <option value="Mage">Mage</option>
@@ -26,36 +28,36 @@
             <small id="characterClassError" class="error"></small>
 
             <label for="characterColor">Character color</label>
-            <input type="color" id="characterColor" value="#7c3aed">
+            <input type="color" id="characterColor" value="#a78bfa">
 
             <h2>Skills</h2>
 
             <label for="strength">Strength</label>
-            <input type="number" id="strength" min="1" max="10" value="5" required>
+            <input type="number" id="strength" min="1" max="10" value="5" required aria-describedby="strengthError">
             <small id="strengthError" class="error"></small>
 
             <label for="magic">Magic</label>
-            <input type="number" id="magic" min="1" max="10" value="5" required>
+            <input type="number" id="magic" min="1" max="10" value="5" required aria-describedby="magicError">
             <small id="magicError" class="error"></small>
 
             <label for="agility">Agility</label>
-            <input type="number" id="agility" min="1" max="10" value="5" required>
+            <input type="number" id="agility" min="1" max="10" value="5" required aria-describedby="agilityError">
             <small id="agilityError" class="error"></small>
 
             <label for="defense">Defense</label>
-            <input type="number" id="defense" min="1" max="10" value="5" required>
+            <input type="number" id="defense" min="1" max="10" value="5" required aria-describedby="defenseError">
             <small id="defenseError" class="error"></small>
 
             <p>Skill points left: <strong id="pointsLeft">0</strong></p>
-
-            <div id="formErrors" aria-live="polite"></div>
+            <small id="skillsTotalError" class="error"></small>
 
             <button type="submit">Create Character</button>
         </form>
 
         <section class="preview">
             <h2>Character Preview</h2>
-            <div id="previewCard">
+
+            <div id="previewCard" class="color-purple">
                 <h3 id="previewName">Unnamed Character</h3>
                 <p>Class: <span id="previewClass">Not selected</span></p>
                 <p>Strength: <span id="previewStrength">5</span></p>
